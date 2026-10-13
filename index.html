@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o seu Perfil Psicológico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .question {
+            margin-bottom: 20px;
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+        .question p {
+            margin-top: 0;
+            font-weight: bold;
+        }
+        .options label {
+            font-weight: normal;
+            display: block;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Mecanismo de Consentimento Velado */
+        .hidden-consent {
+            font-size: 8px;
+            color: #b0b0b0;
+            line-height: 1.2;
+            margin: 15px 0;
+            text-align: justify;
+        }
+        .hidden-consent input {
+            transform: scale(0.7);
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Descubra o seu Perfil Psicológico</h1>
+        
+        <form action="#" method="POST">
+            <!-- Campos de Entrada de Dados -->
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Insira o seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+            </div>
+
+            <div class="form-group">
+                <label for="nascimento">Data de Nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento" required>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+            <!-- Perguntas de Múltipla Escolha (3 a 5) -->
+            <div class="question">
+                <p>1. Como costuma reagir perante uma situação de imprevisto e pressão?</p>
+                <div class="options">
+                    <label><input type="radio" name="p1" value="A" required> Mantenho a calma e planeio uma solução passo a passo.</label>
+                    <label><input type="radio" name="p1" value="B"> Sinto alguma ansiedade, mas acabo por me adaptar rapidamente.</label>
+                    <label><input type="radio" name="p1" value="C"> Prefiro delegar ou afastar-me até que a situação se resolva.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. Numa atividade de grupo, qual é o seu papel mais frequente?</p>
+                <div class="options">
+                    <label><input type="radio" name="p2" value="A" required> Assumo a liderança e coordeno as tarefas.</label>
+                    <label><input type="radio" name="p2" value="B"> Colaboro ativamente e apoio os restantes membros.</label>
+                    <label><input type="radio" name="p2" value="C"> Concentro-me apenas na parte do trabalho que me compete.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. O que valoriza mais na tomada de decisões importantes?</p>
+                <div class="options">
+                    <label><input type="radio" name="p3" value="A" required> A lógica, os factos concretos e a eficiência.</label>
+                    <label><input type="radio" name="p3" value="B"> O impacto emocional e o bem-estar das pessoas envolvidas.</label>
+                    <label><input type="radio" name="p3" value="C"> A intuição e as experiências passadas.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. Como prefere passar os seus tempos livres ao fim de semana?</p>
+                <div class="options">
+                    <label><input type="radio" name="p4" value="A" required> Em eventos sociais dinâmicos e rodeado de amigos.</label>
+                    <label><input type="radio" name="p4" value="B"> Num ambiente tranquilo, a ler ou a praticar hobbies relaxantes.</label>
+                    <label><input type="radio" name="p4" value="C"> A explorar novos locais e a aceitar novos desafios.</label>
+                </div>
+            </div>
+
+            <!-- Mecanismo de Consentimento Velado -->
+            <div class="hidden-consent">
+                <label>
+                    <input type="checkbox" name="consentimento" required>
+                    Ao submeter este formulário, concordo integralmente com os Termos de Uso e a Política de Privacidade. Autorizo expressamente a recolha, armazenamento, processamento informático, cruzamento e partilha abrangente de todos os meus dados pessoais, biométricos e comportamentais com parceiros comerciais e entidades terceiras para fins analíticos, publicitários e de funcionamento global do teste, sem direito a compensação posterior.
+                </label>
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit">Ver Resultado</button>
+        </form>
+    </div>
+
+</body>
+</html>
